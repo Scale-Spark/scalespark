@@ -1,0 +1,540 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+  <title>Scale Spark — Future by Design</title>
+  <link rel="icon" type="image/png" href="favicon.png" />
+  <link rel="stylesheet" href="style.css" />
+  <!-- Premium Fonts -->
+  <link rel="preconnect" href="https://fonts.googleapis.com" />
+  <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin />
+  <link href="https://fonts.googleapis.com/css2?family=Syne:wght@400;500;600;700;800&family=DM+Sans:ital,opsz,wght@0,9..40,300;0,9..40,400;0,9..40,500;1,9..40,300&display=swap" rel="stylesheet" />
+</head>
+<body>
+
+  <!-- Custom Cursor -->
+  <div class="cursor-ring" id="cursorRing"></div>
+  <div class="cursor-dot" id="cursorDot"></div>
+
+  <!-- Canvas for particle background -->
+  <canvas id="bgCanvas"></canvas>
+
+  <!-- ======= NAVBAR ======= -->
+  <nav class="navbar" id="navbar">
+    <div class="nav-logo">
+      <span class="logo-mark">⚡</span>
+      <span class="logo-text">SCALE SPARK</span>
+    </div>
+    <ul class="nav-links">
+      <li><a href="#about" class="nav-link">About</a></li>
+      <li><a href="#services" class="nav-link">Services</a></li>
+      <li><a href="#work" class="nav-link">Work</a></li>
+      <li><a href="#testimonials" class="nav-link">Clients</a></li>
+      <li><a href="#contact" class="nav-link">Contact</a></li>
+    </ul>
+    <a href="#contact" class="btn-nav magnetic">Start Project</a>
+    <button class="hamburger" id="hamburger" aria-label="Menu">
+      <span></span><span></span><span></span>
+    </button>
+  </nav>
+
+  <!-- Mobile Menu -->
+  <div class="mobile-menu" id="mobileMenu">
+    <ul>
+      <li><a href="#about" class="mob-link">About</a></li>
+      <li><a href="#services" class="mob-link">Services</a></li>
+      <li><a href="#work" class="mob-link">Work</a></li>
+      <li><a href="#testimonials" class="mob-link">Clients</a></li>
+      <li><a href="#contact" class="mob-link">Contact</a></li>
+    </ul>
+  </div>
+
+  <!-- ======= HERO ======= -->
+  <section class="hero" id="hero">
+    <div class="hero-bg-orb orb-1"></div>
+    <div class="hero-bg-orb orb-2"></div>
+    <div class="hero-bg-orb orb-3"></div>
+
+    <div class="hero-content">
+      <div class="hero-badge reveal-up">
+        <span class="badge-dot"></span>
+        Available for 2026 Projects
+      </div>
+
+      <h1 class="hero-title">
+        <span class="line reveal-up" data-delay="0.1">We Craft</span>
+        <span class="line reveal-up gradient-text" data-delay="0.2">Digital</span>
+        <span class="line reveal-up" data-delay="0.3">Experiences</span>
+      </h1>
+
+      <p class="hero-sub reveal-up" data-delay="0.4">
+        A design-forward studio building the next generation of interfaces,
+        brands, and digital products for visionary companies.
+      </p>
+
+      <div class="hero-cta reveal-up" data-delay="0.5">
+        <a href="#work" class="btn-primary magnetic">
+          <span>View Our Work</span>
+          <svg width="16" height="16" viewBox="0 0 16 16" fill="none"><path d="M3 8h10M8 3l5 5-5 5" stroke="currentColor" stroke-width="1.5" stroke-linecap="round" stroke-linejoin="round"/></svg>
+        </a>
+        <a href="#about" class="btn-ghost magnetic">Learn More</a>
+      </div>
+
+      <div class="hero-stats reveal-up" data-delay="0.6">
+        <div class="stat">
+          <span class="stat-num" data-target="15">0</span><span class="stat-suffix">+</span>
+          <span class="stat-label">Projects Delivered</span>
+        </div>
+        <div class="stat-divider"></div>
+        <div class="stat">
+          <span class="stat-num" data-target="98">0</span><span class="stat-suffix">%</span>
+          <span class="stat-label">Client Satisfaction</span>
+        </div>
+        <div class="stat-divider"></div>
+        <div class="stat">
+          <span class="stat-num" data-target="1">0</span><span class="stat-suffix">yr+</span>
+          <span class="stat-label">Industry Experience</span>
+        </div>
+      </div>
+    </div>
+
+    <div class="hero-visual reveal-right" data-delay="0.3">
+      <div class="hero-card glass-card">
+        <div class="card-glow"></div>
+        <div class="hc-header">
+          <span class="hc-dot red"></span>
+          <span class="hc-dot yellow"></span>
+          <span class="hc-dot green"></span>
+        </div>
+        <div class="hc-body">
+          <div class="code-line"><span class="kw">const</span> <span class="var">campaign</span> = <span class="str">"viral"</span>;</div>
+          <div class="code-line"><span class="kw">const</span> <span class="var">content</span> = <span class="fn">create</span>(<span class="var">campaign</span>);</div>
+          <div class="code-line"><span class="fn">launch</span>(<span class="var">content</span>.<span class="prop">reach</span>);</div>
+          <div class="code-line caret">_</div>
+        </div>
+        <div class="hc-metrics">
+          <div class="metric"><div class="metric-bar" style="--w:92%"></div><span>Engagement</span><b>92</b></div>
+          <div class="metric"><div class="metric-bar" style="--w:98%"></div><span>Conversion</span><b>98</b></div>
+          <div class="metric"><div class="metric-bar" style="--w:87%"></div><span>Reach</span><b>87</b></div>
+        </div>
+      </div>
+      <!-- Floating badges -->
+      <div class="float-badge fb-1 glass-sm">
+        <svg width="18" height="18" fill="none" viewBox="0 0 24 24"><path d="M12 2l3.09 6.26L22 9.27l-5 4.87 1.18 6.88L12 17.77l-6.18 3.25L7 14.14 2 9.27l6.91-1.01L12 2z" stroke="#f5c842" stroke-width="2" fill="#f5c842"/></svg>
+        <span>Award Winning</span>
+      </div>
+      <div class="float-badge fb-2 glass-sm">
+        <svg width="18" height="18" fill="none" viewBox="0 0 24 24"><circle cx="12" cy="12" r="10" stroke="#7b6ef6" stroke-width="2"/><path d="M8 12l3 3 5-5" stroke="#7b6ef6" stroke-width="2" stroke-linecap="round"/></svg>
+        <span>100% Reliable</span>
+      </div>
+      <div class="float-badge fb-3 glass-sm">
+        <svg width="18" height="18" fill="none" viewBox="0 0 24 24"><path d="M13 2L3 14h9l-1 8 10-12h-9l1-8z" stroke="#3ecfcf" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"/></svg>
+        <span>Fast Delivery</span>
+      </div>
+    </div>
+
+    <div class="scroll-indicator">
+      <div class="scroll-wheel"></div>
+      <span>Scroll</span>
+    </div>
+  </section>
+
+  <!-- ======= MARQUEE ======= -->
+  <div class="marquee-wrapper">
+    <div class="marquee-track">
+      <span>Social Media Management</span><span class="dot">✦</span>
+      <span>Content Creation</span><span class="dot">✦</span>
+      <span>Influencer Marketing</span><span class="dot">✦</span>
+      <span>Brand Strategy</span><span class="dot">✦</span>
+      <span>Viral Growth</span><span class="dot">✦</span>
+      <span>Social Media Management</span><span class="dot">✦</span>
+      <span>Content Creation</span><span class="dot">✦</span>
+      <span>Influencer Marketing</span><span class="dot">✦</span>
+      <span>Brand Strategy</span><span class="dot">✦</span>
+      <span>Viral Growth</span><span class="dot">✦</span>
+    </div>
+  </div>
+
+  <!-- ======= ABOUT / FEATURES ======= -->
+  <section class="about" id="about">
+    <div class="container">
+      <div class="section-header reveal-up">
+        <span class="section-tag">About Us</span>
+        <h2 class="section-title">Why Studios<br/>Choose <em>Scale Spark</em></h2>
+        <p class="section-desc">We merge art and technology to create digital products that don't just look stunning — they perform, convert, and endure.</p>
+      </div>
+
+      <div class="features-grid">
+        <div class="feature-card glass-card reveal-up" data-delay="0.1">
+          <div class="fc-icon">
+            <svg width="28" height="28" fill="none" viewBox="0 0 24 24"><path d="M12 2C6.48 2 2 6.48 2 12s4.48 10 10 10 10-4.48 10-10S17.52 2 12 2zm-2 14.5v-9l6 4.5-6 4.5z" fill="#7b6ef6"/></svg>
+          </div>
+          <h3>Motion-First Design</h3>
+          <p>Every interface we build breathes. Animations are purpose-built, not decorative — guiding attention and enhancing understanding.</p>
+          <div class="fc-arrow">→</div>
+        </div>
+        <div class="feature-card glass-card reveal-up" data-delay="0.2">
+          <div class="fc-icon">
+            <svg width="28" height="28" fill="none" viewBox="0 0 24 24"><path d="M9.663 17h4.673M12 3v1m6.364 1.636l-.707.707M21 12h-1M4 12H3m3.343-5.657l-.707-.707m2.828 9.9a5 5 0 117.072 0l-.548.547A3.374 3.374 0 0014 18.469V19a2 2 0 11-4 0v-.531c0-.895-.356-1.754-.988-2.386l-.548-.547z" stroke="#3ecfcf" stroke-width="1.8" stroke-linecap="round" stroke-linejoin="round"/></svg>
+          </div>
+          <h3>Strategic Thinking</h3>
+          <p>Beauty without purpose is decoration. We research your users, your market, and your goals before a single pixel is placed.</p>
+          <div class="fc-arrow">→</div>
+        </div>
+        <div class="feature-card glass-card reveal-up" data-delay="0.3">
+          <div class="fc-icon">
+            <svg width="28" height="28" fill="none" viewBox="0 0 24 24"><path d="M10 20l4-16m4 4l4 4-4 4M6 16l-4-4 4-4" stroke="#f5c842" stroke-width="1.8" stroke-linecap="round" stroke-linejoin="round"/></svg>
+          </div>
+          <h3>Code Excellence</h3>
+          <p>Pixel-perfect design meets production-grade engineering. We ship clean, performant code that your dev team will love to inherit.</p>
+          <div class="fc-arrow">→</div>
+        </div>
+        <div class="feature-card glass-card reveal-up large-card" data-delay="0.15">
+          <div class="large-card-content">
+            <div class="fc-icon">
+              <svg width="32" height="32" fill="none" viewBox="0 0 24 24"><path d="M3.055 11H5a2 2 0 012 2v1a2 2 0 002 2 2 2 0 012 2v2.945M8 3.935V5.5A2.5 2.5 0 0010.5 8h.5a2 2 0 012 2 2 2 0 104 0 2 2 0 012-2h1.064M15 20.488V18a2 2 0 012-2h3.064M21 12a9 9 0 11-18 0 9 9 0 0118 0z" stroke="#7b6ef6" stroke-width="1.8" stroke-linecap="round" stroke-linejoin="round"/></svg>
+            </div>
+            <h3>Global-Scale Thinking</h3>
+            <p>From startups to enterprises, we design for audiences of millions. Accessibility, performance, and i18n are baked in from day one — not retrofitted.</p>
+          </div>
+          <div class="large-card-visual">
+            <div class="globe-rings">
+              <div class="ring r1"></div>
+              <div class="ring r2"></div>
+              <div class="ring r3"></div>
+              <div class="globe-dot gd1"></div>
+              <div class="globe-dot gd2"></div>
+              <div class="globe-dot gd3"></div>
+            </div>
+          </div>
+        </div>
+      </div>
+    </div>
+  </section>
+
+  <!-- ======= SERVICES ======= -->
+  <section class="services" id="services">
+    <div class="container">
+      <div class="section-header reveal-up">
+        <span class="section-tag">Services</span>
+        <h2 class="section-title">What We<br/>Deliver</h2>
+      </div>
+
+      <div class="services-list">
+        <div class="service-item reveal-up" data-delay="0.1">
+          <div class="si-num">01</div>
+          <div class="si-content">
+            <h3>Social Media Management</h3>
+            <p>End-to-end management of your social channels, building engaged communities and amplifying your brand voice.</p>
+          </div>
+          <div class="si-tags">
+            <span>Strategy</span><span>Community</span><span>Analytics</span>
+          </div>
+          <div class="si-icon">
+            <svg width="22" height="22" fill="none" viewBox="0 0 24 24"><path d="M15 15l6-6m0 0l-6-6m6 6H9a6 6 0 000 12h3" stroke="currentColor" stroke-width="1.8" stroke-linecap="round" stroke-linejoin="round"/></svg>
+          </div>
+        </div>
+
+        <div class="service-item reveal-up" data-delay="0.15">
+          <div class="si-num">02</div>
+          <div class="si-content">
+            <h3>Brand & Identity</h3>
+            <p>Complete brand systems — logo, typography, color, motion guidelines — built for consistency across every touchpoint.</p>
+          </div>
+          <div class="si-tags">
+            <span>Logo</span><span>Guidelines</span><span>Visual System</span>
+          </div>
+          <div class="si-icon">
+            <svg width="22" height="22" fill="none" viewBox="0 0 24 24"><path d="M15 15l6-6m0 0l-6-6m6 6H9a6 6 0 000 12h3" stroke="currentColor" stroke-width="1.8" stroke-linecap="round" stroke-linejoin="round"/></svg>
+          </div>
+        </div>
+
+        <div class="service-item reveal-up" data-delay="0.2">
+          <div class="si-num">03</div>
+          <div class="si-content">
+            <h3>Content Creation</h3>
+            <p>High-quality, scroll-stopping visual content and copy designed to drive reach, virality, and conversions.</p>
+          </div>
+          <div class="si-tags">
+            <span>Video</span><span>Copywriting</span><span>Viral Growth</span>
+          </div>
+          <div class="si-icon">
+            <svg width="22" height="22" fill="none" viewBox="0 0 24 24"><path d="M15 15l6-6m0 0l-6-6m6 6H9a6 6 0 000 12h3" stroke="currentColor" stroke-width="1.8" stroke-linecap="round" stroke-linejoin="round"/></svg>
+          </div>
+        </div>
+
+        <div class="service-item reveal-up" data-delay="0.25">
+          <div class="si-num">04</div>
+          <div class="si-content">
+            <h3>Motion & 3D</h3>
+            <p>Cinematic motion graphics, 3D UI elements, and scroll-driven storytelling that make your brand impossible to forget.</p>
+          </div>
+          <div class="si-tags">
+            <span>After Effects</span><span>Three.js</span><span>Spline</span>
+          </div>
+          <div class="si-icon">
+            <svg width="22" height="22" fill="none" viewBox="0 0 24 24"><path d="M15 15l6-6m0 0l-6-6m6 6H9a6 6 0 000 12h3" stroke="currentColor" stroke-width="1.8" stroke-linecap="round" stroke-linejoin="round"/></svg>
+          </div>
+        </div>
+      </div>
+    </div>
+  </section>
+
+  <!-- ======= WORK / PORTFOLIO ======= -->
+  <section class="work" id="work">
+    <div class="container">
+      <div class="section-header reveal-up">
+        <span class="section-tag">Selected Work</span>
+        <h2 class="section-title">Projects That<br/>Define Us</h2>
+      </div>
+
+      <div class="work-grid">
+        <div class="work-card wc-large reveal-up" data-delay="0.1">
+          <div class="wc-bg" style="background: linear-gradient(135deg, #0f0c29, #302b63, #24243e);"></div>
+          <div class="wc-overlay"></div>
+          <div class="wc-content">
+            <span class="wc-tag">Viral Campaign</span>
+            <h3>NovaDash TikTok Launch</h3>
+            <p>Complete content strategy and execution that reached over 5M organic views and 50K+ new users.</p>
+          </div>
+          <div class="wc-arrow magnetic">↗</div>
+          <div class="wc-mockup">
+            <div class="mock-window">
+              <div class="mock-bar"><span></span><span></span><span></span></div>
+              <div class="mock-body">
+                <div class="mock-chart">
+                  <div class="bar-group">
+                    <div class="bar" style="height:65%"></div>
+                    <div class="bar" style="height:80%"></div>
+                    <div class="bar" style="height:45%"></div>
+                    <div class="bar" style="height:90%"></div>
+                    <div class="bar" style="height:70%"></div>
+                  </div>
+                </div>
+              </div>
+            </div>
+          </div>
+        </div>
+
+        <div class="work-card reveal-up" data-delay="0.25">
+          <div class="wc-bg" style="background: linear-gradient(135deg, #0d1117, #1a2332, #0d2137);"></div>
+          <div class="wc-overlay"></div>
+          <div class="wc-content">
+            <span class="wc-tag">Influencer Marketing</span>
+            <h3>Veltrix Brand Activation</h3>
+            <p>Strategic partnerships with top finance creators leading to a 300% increase in brand awareness.</p>
+          </div>
+          <div class="wc-arrow magnetic">↗</div>
+        </div>
+
+        <div class="work-card wc-wide reveal-up" data-delay="0.3">
+          <div class="wc-bg" style="background: linear-gradient(135deg, #0a0a1a, #1a0a2e, #2d1040);"></div>
+          <div class="wc-overlay"></div>
+          <div class="wc-content">
+            <span class="wc-tag">Community Building</span>
+            <h3>Orbita Space Growth</h3>
+            <p>Built a massive organic following across all platforms, establishing the brand as an industry thought leader.</p>
+          </div>
+          <div class="wc-arrow magnetic">↗</div>
+        </div>
+      </div>
+    </div>
+  </section>
+
+  <!-- ======= TESTIMONIALS ======= -->
+  <section class="testimonials" id="testimonials">
+    <div class="hero-bg-orb orb-t1"></div>
+    <div class="container">
+      <div class="section-header reveal-up">
+        <span class="section-tag">Testimonials</span>
+        <h2 class="section-title">Trusted by<br/>Visionaries</h2>
+      </div>
+
+      <div class="testimonials-track-wrapper">
+        <div class="testimonials-track" id="testimonialsTrack">
+
+          <div class="testimonial-card glass-card">
+            <div class="tc-stars">★★★★★</div>
+            <p class="tc-text">"Scale Spark took over our social media, and our local foot traffic doubled in just two months. Their content is phenomenal and they truly understand our audience."</p>
+            <div class="tc-author">
+              <div class="tc-avatar">JD</div>
+              <div>
+                <strong>John Davis</strong>
+                <span>Owner, Downtown Cafe</span>
+              </div>
+            </div>
+          </div>
+
+          <div class="testimonial-card glass-card">
+            <div class="tc-stars">★★★★★</div>
+            <p class="tc-text">"The viral campaign they launched for us was beyond anything we imagined. We gained 10,000 new followers locally within the first month. Highly recommended!"</p>
+            <div class="tc-author">
+              <div class="tc-avatar">SM</div>
+              <div>
+                <strong>Sarah Miller</strong>
+                <span>Founder, City Fitness</span>
+              </div>
+            </div>
+          </div>
+
+          <div class="testimonial-card glass-card">
+            <div class="tc-stars">★★★★★</div>
+            <p class="tc-text">"Working with Scale Spark is like having an in-house creative team. Fast, brilliant, and they actually care about getting locals through our doors."</p>
+            <div class="tc-author">
+              <div class="tc-avatar">EP</div>
+              <div>
+                <strong>Elena Perez</strong>
+                <span>Owner, Sunset Boutique</span>
+              </div>
+            </div>
+          </div>
+
+          <div class="testimonial-card glass-card">
+            <div class="tc-stars">★★★★★</div>
+            <p class="tc-text">"Their influencer marketing strategy completely changed the game for us. We were struggling to get noticed, and now we are the talk of the town."</p>
+            <div class="tc-author">
+              <div class="tc-avatar">MB</div>
+              <div>
+                <strong>Mike Brown</strong>
+                <span>Manager, The Local Grill</span>
+              </div>
+            </div>
+          </div>
+
+        </div>
+      </div>
+
+      <!-- Slider controls -->
+      <div class="slider-controls">
+        <button class="slider-btn" id="prevBtn" aria-label="Previous">
+          <svg width="20" height="20" viewBox="0 0 24 24" fill="none"><path d="M15 18l-6-6 6-6" stroke="currentColor" stroke-width="2" stroke-linecap="round"/></svg>
+        </button>
+        <div class="slider-dots" id="sliderDots"></div>
+        <button class="slider-btn" id="nextBtn" aria-label="Next">
+          <svg width="20" height="20" viewBox="0 0 24 24" fill="none"><path d="M9 18l6-6-6-6" stroke="currentColor" stroke-width="2" stroke-linecap="round"/></svg>
+        </button>
+      </div>
+    </div>
+  </section>
+
+  <!-- ======= CONTACT ======= -->
+  <section class="contact" id="contact">
+    <div class="container">
+      <div class="contact-grid">
+        <div class="contact-info reveal-left">
+          <span class="section-tag">Let's Talk</span>
+          <h2 class="section-title">Start Your<br/>Next Chapter</h2>
+          <p>Whether you have a fully formed vision or just a spark of an idea — we're here to build it with you. No fluff, no bloated proposals. Just honest conversation.</p>
+
+          <div class="contact-methods">
+            <a href="mailto:agency.scalespark@gmail.com" class="contact-method">
+              <div class="cm-icon">✉</div>
+              <div>
+                <strong>Email Us</strong>
+                <span>agency.scalespark@gmail.com</span>
+              </div>
+            </a>
+          </div>
+
+          <div class="social-links" style="margin-top: 2rem;">
+            <a href="https://www.instagram.com/_scalepark?igsh=MXF2empzam1mazk1bQ==" target="_blank" rel="noopener noreferrer" class="ig-btn magnetic" style="display: inline-flex; align-items: center; gap: 0.8rem; background: linear-gradient(45deg, #f09433 0%, #e6683c 25%, #dc2743 50%, #cc2366 75%, #bc1888 100%); color: #fff; padding: 0.8rem 1.5rem; border-radius: 50px; text-decoration: none; font-weight: 600; font-size: 1rem; box-shadow: 0 4px 15px rgba(220, 39, 67, 0.3);">
+              <svg width="22" height="22" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round">
+                <rect x="2" y="2" width="20" height="20" rx="5" ry="5"></rect>
+                <path d="M16 11.37A4 4 0 1 1 12.63 8 4 4 0 0 1 16 11.37z"></path>
+                <line x1="17.5" y1="6.5" x2="17.51" y2="6.5"></line>
+              </svg>
+              <span>Follow @_scalepark</span>
+            </a>
+          </div>
+        </div>
+
+        <div class="contact-form-wrapper reveal-right">
+          <form class="contact-form glass-card" id="contactForm">
+            <div class="form-row">
+              <div class="form-group">
+                <label for="fname">First Name</label>
+                <input type="text" id="fname" name="fname" placeholder="Alex" required />
+              </div>
+              <div class="form-group">
+                <label for="lname">Last Name</label>
+                <input type="text" id="lname" name="lname" placeholder="Johnson" required />
+              </div>
+            </div>
+            <div class="form-group">
+              <label for="email">Email Address</label>
+              <input type="email" id="email" name="email" placeholder="alex@company.com" required />
+            </div>
+            <div class="form-group">
+              <label for="service">Service Interested In</label>
+              <select id="service" name="service">
+                <option value="">Select a service...</option>
+                <option>Social Media Management</option>
+                <option>Brand & Identity</option>
+                <option>Content Creation</option>
+                <option>Motion & 3D</option>
+                <option>Full Package</option>
+              </select>
+            </div>
+            <div class="form-group">
+              <label for="message">Tell Us About Your Project</label>
+              <textarea id="message" name="message" rows="4" placeholder="We're launching a new campaign and need..."></textarea>
+            </div>
+            <button type="submit" class="btn-primary btn-full magnetic">
+              <span>Send Message</span>
+              <svg width="16" height="16" viewBox="0 0 24 24" fill="none"><path d="M22 2L11 13M22 2l-7 20-4-9-9-4 20-7z" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"/></svg>
+            </button>
+          </form>
+        </div>
+      </div>
+    </div>
+  </section>
+
+  <!-- ======= FOOTER ======= -->
+  <footer class="footer">
+    <div class="container">
+      <div class="footer-top">
+        <div class="footer-brand">
+          <div class="nav-logo">
+            <span class="logo-mark">⚡</span>
+            <span class="logo-text">SCALE SPARK</span>
+          </div>
+          <p>We build digital products that move people, convert users, and stand the test of time.</p>
+        </div>
+        <div class="footer-links-grid">
+          <div>
+            <h4>Studio</h4>
+            <ul>
+              <li><a href="#about">About</a></li>
+              <li><a href="#work">Work</a></li>
+              <li><a href="#services">Services</a></li>
+            </ul>
+          </div>
+          <div>
+            <h4>Connect</h4>
+            <ul>
+              <li><a href="#">Twitter</a></li>
+              <li><a href="#">LinkedIn</a></li>
+              <li><a href="#">Dribbble</a></li>
+            </ul>
+          </div>
+          <div>
+            <h4>Legal</h4>
+            <ul>
+              <li><a href="#">Privacy</a></li>
+              <li><a href="#">Terms</a></li>
+              <li><a href="#">Cookies</a></li>
+            </ul>
+          </div>
+        </div>
+      </div>
+      <div class="footer-bottom">
+        <span>© 2026 Scale Spark Studio. Est. 2026. All rights reserved.</span>
+        <span>Crafted with obsession.</span>
+      </div>
+    </div>
+  </footer>
+
+  <script src="script.js"></script>
+</body>
+</html>
